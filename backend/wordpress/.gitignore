@@ -3,4 +3,4 @@
 !.htaccess
 !.gitignore
 
-!/wp-content/plugins/acme-acf/
+!wp-content/plugins/acme-acf
