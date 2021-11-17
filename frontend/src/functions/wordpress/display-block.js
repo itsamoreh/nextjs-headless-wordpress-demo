@@ -16,6 +16,14 @@ export default function displayBlock(block, index) {
       const Freeform = dynamic(() => import("@/components/blocks/Freeform"));
       return <Freeform {...attributes} key={index} />
 
+    case 'acf/acme-call-to-action':
+      const CallToAction = dynamic(() => import("@/components/blocks/CallToAction"));
+      return <CallToAction {...attributes.data} key={index} />
+
+    case 'acf/acme-product-features':
+      const ProductFeatures = dynamic(() => import("@/components/blocks/ProductFeatures"));
+      return <ProductFeatures {...attributes.data} key={index} />
+
     default:
       return <pre key={index}>{JSON.stringify(block, null, 2)}</pre>
   }
