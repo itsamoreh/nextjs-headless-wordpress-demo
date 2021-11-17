@@ -2,3 +2,5 @@
 !composer*
 !.htaccess
 !.gitignore
+
+!/wp-content/plugins/acme-acf/
