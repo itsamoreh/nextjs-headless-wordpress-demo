@@ -5,11 +5,9 @@ import { gql } from '@apollo/client'
 
 import { getApolloClient } from '@/lib/apollo-client'
 
-import styles from '../../styles/Home.module.css'
-
 export default function Post({ post, site }) {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>{post.title}</title>
         <meta
@@ -19,20 +17,22 @@ export default function Post({ post, site }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>{post.title}</h1>
-
-        <div className={styles.grid}>
-          <Blocks blocks={JSON.parse(post.blocksJSON)} />
+      <main className="container pt-28 mx-auto">
+        <div className="max-w-lg mx-auto mb-16 text-center">
+          <h1 className="mb-4 text-6xl font-extrabold">{post.title}</h1>
         </div>
 
-        <p className={styles.backToHome}>
+        <Blocks blocks={JSON.parse(post.blocksJSON)} />
+
+        <div className="w-full py-8 mt-2 text-center border-t border-gray-300 transition-colors duration-100">
           <Link href="/">
-            <a>← Back to home</a>
+            <a className="hover:text-blue-700 focus:text-blue-700 active:text-blue-700">
+              ← Back to home
+            </a>
           </Link>
-        </p>
+        </div>
       </main>
-    </div>
+    </>
   )
 }
 
