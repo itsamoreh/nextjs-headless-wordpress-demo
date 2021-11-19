@@ -3,4 +3,6 @@
 !.htaccess
 !.gitignore
 
+!wp-content
+!wp-content/plugins
 !wp-content/plugins/acme-acf
