@@ -29,22 +29,26 @@ export default function Home({ page, posts }) {
                   <div className="max-w-2xl mx-auto mb-8 overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
                     <Link href={post.path}>
                       <a>
-                        <img
-                          className="object-cover w-full h-64"
-                          src={post.featuredImage?.node?.sourceUrl ?? ''}
-                          alt="Article"
-                        />
+                        {post.featuredImage?.node?.sourceUrl && (
+                          <img
+                            className="object-cover w-full h-64"
+                            src={post.featuredImage?.node?.sourceUrl}
+                            alt="Article"
+                          />
+                        )}
 
                         <div className="p-6">
-                          <h3 className="block mt-2 text-2xl font-black text-gray-800 dark:text-white hover:text-gray-600 hover:underline">
+                          <h3 className="block text-2xl font-black text-gray-800 dark:text-white hover:text-gray-600 hover:underline">
                             {post.title}
                           </h3>
-                          <p
-                            className="mt-2 text-sm text-gray-600 dark:text-gray-400"
-                            dangerouslySetInnerHTML={{
-                              __html: post.excerpt,
-                            }}
-                          ></p>
+                          {post.excerpt && (
+                            <p
+                              className="mt-2 text-sm text-gray-600 dark:text-gray-400"
+                              dangerouslySetInnerHTML={{
+                                __html: post.excerpt,
+                              }}
+                            />
+                          )}
                         </div>
                       </a>
                     </Link>
