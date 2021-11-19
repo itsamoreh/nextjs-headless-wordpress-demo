@@ -8,32 +8,12 @@ import PropTypes from 'prop-types'
 export default function ProductFeatures({
   heading,
   description,
-  // features,
+  features,
   // images,
 }) {
-  const features = [
-    { name: 'Origin', description: 'Designed by Good Goods, Inc.' },
-    {
-      name: 'Material',
-      description:
-        'Solid walnut base with rare earth magnets and powder coated steel card cover',
-    },
-    { name: 'Dimensions', description: '6.25" x 3.55" x 1.15"' },
-    {
-      name: 'Finish',
-      description: 'Hand sanded and finished with natural oil',
-    },
-    { name: 'Includes', description: 'Wood card tray and 3 refill packs' },
-    {
-      name: 'Considerations',
-      description:
-        'Made from natural materials. Grain and color vary with each item.',
-    },
-  ]
-
   return (
-    <div className="bg-white">
-      <div className="max-w-2xl mx-auto py-24 px-4 grid items-center grid-cols-1 gap-y-16 gap-x-8 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8 lg:grid-cols-2">
+    <div className="container">
+      <div className="my-16 grid items-center grid-cols-1 gap-y-16 gap-x-8 lg:grid-cols-2">
         <div>
           <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
             {heading}
@@ -79,4 +59,8 @@ export default function ProductFeatures({
   )
 }
 
-ProductFeatures.propTypes = {}
+ProductFeatures.propTypes = {
+  heading: PropTypes.string,
+  description: PropTypes.string,
+  features: PropTypes.array,
+}
