@@ -17,19 +17,20 @@ export default function Post({ post, site }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="container pt-28 mx-auto">
-        <div className="max-w-lg mx-auto mb-16 text-center">
-          <h1 className="mb-4 text-6xl font-extrabold">{post.title}</h1>
-        </div>
+      <main className="py-28">
+        <h1 className="max-w-4xl mx-auto mb-16 text-center text-6xl font-extrabold">
+          {post.title}
+        </h1>
 
-        <Blocks blocks={JSON.parse(post.blocksJSON)} />
+        <Blocks blocks={post.blocks} />
 
-        <div className="w-full py-8 mt-2 text-center border-t border-gray-300 transition-colors duration-100">
-          <Link href="/">
-            <a className="hover:text-blue-700 focus:text-blue-700 active:text-blue-700">
-              ← Back to home
-            </a>
-          </Link>
+        <div className="container">
+          <div className="mx-auto prose prose-indigo">
+            <hr />
+            <Link href="/">
+              <a>← Back to home</a>
+            </Link>
+          </div>
         </div>
       </main>
     </>
@@ -49,10 +50,44 @@ export async function getStaticProps({ params = {} } = {}) {
         }
         postBy(slug: $slug) {
           id
-          content
-          blocksJSON
           title
           slug
+          blocks {
+            ... on CoreFreeformBlock {
+              name
+              attributes {
+                content
+              }
+            }
+            ... on AcfAcmeCallToActionBlock {
+              name
+              acf {
+                headingCall
+                headingQuestion
+                primaryCta {
+                  target
+                  title
+                  url
+                }
+                secondaryCta {
+                  title
+                  target
+                  url
+                }
+              }
+            }
+            ... on AcfAcmeProductFeaturesBlock {
+              name
+              acf {
+                description
+                features {
+                  description
+                  name
+                }
+                heading
+              }
+            }
+          }
         }
       }
     `,
