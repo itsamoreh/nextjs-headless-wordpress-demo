@@ -22,6 +22,11 @@ function acme_acf_init_block_types() {
 				'icon'            => 'admin-comments',
 				'keywords'        => array( 'cta', 'call' ),
 				'render_template' => plugin_dir_path( __FILE__ ) . '/template-parts/blocks/call-to-action.php',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'align' => false,
+					'mode'  => false,
+				),
 			)
 		);
 
@@ -34,6 +39,11 @@ function acme_acf_init_block_types() {
 				'icon'            => 'excerpt-view',
 				'keywords'        => array( 'product', 'features' ),
 				'render_template' => plugin_dir_path( __FILE__ ) . '/template-parts/blocks/product-features.php',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'align' => false,
+					'mode'  => false,
+				),
 			)
 		);
 	}
