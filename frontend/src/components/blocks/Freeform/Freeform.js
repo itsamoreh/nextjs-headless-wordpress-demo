@@ -1,6 +1,4 @@
 import PropTypes from 'prop-types'
-import styles from './Freeform.module.css'
-import cn from 'classnames'
 
 /**
  * Freeform Block
