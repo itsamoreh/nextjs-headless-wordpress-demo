@@ -116,4 +116,5 @@ php_value memory_limit 15M
 ## Credits
 
 [Next.js Headless WordPress](https://github.com/imranhsayed/nextjs-headless-wordpress)
+
 [Next.js WordPress Starter](https://github.com/colbyfayock/next-wordpress-starter)
