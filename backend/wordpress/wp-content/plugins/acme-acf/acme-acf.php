@@ -12,4 +12,5 @@
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  */
 
+require_once dirname( __FILE__ ) . '/acme-acf-fields.php';
 require_once dirname( __FILE__ ) . '/acme-acf-blocks.php';
