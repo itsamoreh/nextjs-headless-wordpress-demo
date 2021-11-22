@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "49af24f7a71f302e24bee945d513173c",
+    "content-hash": "a6bcb1953b248a1880e009ef2d300a1a",
     "packages": [
         {
             "name": "composer/installers",
@@ -158,6 +158,32 @@
             "time": "2021-09-13T08:19:44+00:00"
         },
         {
+            "name": "findcanary/wp-graphql-the-seo-framework",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/findcanary/wp-graphql-the-seo-framework.git",
+                "reference": "92010b8846c526328b4d35e615661e81794e1320"
+            },
+            "default-branch": true,
+            "type": "wordpress-plugin",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Henrik Wirth",
+                    "homepage": "https://henrikwirth.com"
+                },
+                {
+                    "name": "FindCanary.com",
+                    "homepage": "https://findcanary.com"
+                }
+            ],
+            "description": "Adds The SEO framework support to the WPGraphQL Plugin for posts, pages and custom post types.",
+            "time": "2021-08-15T21:33:50+00:00"
+        },
+        {
             "name": "itsamoreh/bring-your-own-blocks",
             "version": "v0.1.1",
             "source": {
@@ -292,6 +318,64 @@
                 "source": "https://github.com/pristas-peter/wp-graphql-gutenberg/tree/v0.3.11"
             },
             "time": "2021-08-16T13:38:20+00:00"
+        },
+        {
+            "name": "sybrew/the-seo-framework",
+            "version": "4.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sybrew/the-seo-framework.git",
+                "reference": "0e8748fce5e329791e1735f41bf07df27e2d85a5"
+            },
+            "require": {
+                "composer/installers": "^1.0",
+                "php": "^5.6 || ^7.0 || ^8.0"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "0.5.0",
+                "phpcompatibility/phpcompatibility-wp": "2.0.0",
+                "sirbrillig/phpcs-variable-analysis": "2.6.4",
+                "theseoframework/wpcs-tsf": "1.0.0"
+            },
+            "type": "wordpress-plugin",
+            "scripts": {
+                "php:compatibility": [
+                    "composer install && vendor/bin/phpcs -p -s --runtime-set testVersion '5.2-' --standard=PHPCompatibilityWP --ignore=docker,tools,tests,node_modules,vendor --extensions=php"
+                ],
+                "php:lint": [
+                    "composer install && vendor/bin/phpcs -p -s"
+                ],
+                "php:autofix": [
+                    "composer install && vendor/bin/phpcbf"
+                ],
+                "php:lint:errors": [
+                    "composer install && vendor/bin/phpcs -p -s --runtime-set ignore_warnings_on_exit 1"
+                ]
+            },
+            "license": [
+                "GPL-3.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "Sybre Waaijer",
+                    "email": "sybrew@users.noreply.github.com",
+                    "homepage": "https://cyberwire.nl/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "An automated, advanced, accessible, unbranded and extremely fast SEO solution for any WordPress website.",
+            "homepage": "https://theseoframework.com/",
+            "keywords": [
+                "plugin",
+                "seo",
+                "wordpress"
+            ],
+            "support": {
+                "docs": "https://theseoframework.com/docs/",
+                "forum": "https://wordpress.org/support/plugin/autodescription/",
+                "wiki": "https://github.com/sybrew/the-seo-framework/wiki"
+            },
+            "time": "2021-11-15T21:20:22+00:00"
         },
         {
             "name": "symfony/css-selector",
