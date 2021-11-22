@@ -5,6 +5,13 @@ export const ALL_BLOCKS = `
       content
     }
   }
+  ... on CedaroCodeBlock {
+    name
+    attributes {
+      content
+      language
+    }
+  }
   ... on AcfAcmeCallToActionBlock {
     name
     acf {

@@ -16,6 +16,10 @@ export default function displayBlock(block, index) {
       const Freeform = dynamic(() => import("@/components/blocks/Freeform"));
       return <Freeform {...attributes} key={index} />
 
+    case 'cedaro/code':
+      const Code = dynamic(() => import("@/components/blocks/Code"));
+      return <Code {...attributes} key={index} />
+
     case 'acf/acme-call-to-action':
       const CallToAction = dynamic(() => import("@/components/blocks/CallToAction"));
       return <CallToAction {...acf} key={index} />
