@@ -1,8 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { gql } from '@apollo/client'
-
-import { getApolloClient } from 'lib/apollo-client'
+import { getApolloClient } from '@/lib/apollo/apollo-client'
 
 export default function Home({ page, posts }) {
   const { title, description } = page

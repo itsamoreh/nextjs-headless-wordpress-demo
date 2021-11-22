@@ -6,17 +6,17 @@ import { ALL_BLOCKS } from '@/lib/wordpress/partials/blocks'
 import { ALL_SEO } from '@/lib/wordpress/partials/seo'
 import Blocks from '@/components/blocks/Blocks'
 
-export default function Post({ post }) {
+export default function page({ page }) {
   return (
     <>
-      <Head seo={post.seo} link={post.link} />
+      <Head seo={page.seo} link={page.link} />
 
       <main className="py-28">
         <h1 className="max-w-4xl mx-auto mb-16 text-center text-6xl font-extrabold">
-          {post.title}
+          {page.title}
         </h1>
 
-        <Blocks blocks={post.blocks} />
+        <Blocks blocks={page.blocks} />
 
         <div className="container">
           <div className="mx-auto prose prose-indigo">
@@ -32,14 +32,14 @@ export default function Post({ post }) {
 }
 
 export async function getStaticProps({ params = {} } = {}) {
-  const { postSlug } = params
+  const { pageSlug } = params
 
   const apolloClient = getApolloClient()
 
   const data = await apolloClient.query({
     query: gql`
-      query PostBySlug($slug: String!) {
-        postBy(slug: $slug) {
+      query PageBySlug($slug: String!) {
+        pageBy(uri: $slug) {
           id
           title
           slug
@@ -54,15 +54,15 @@ export async function getStaticProps({ params = {} } = {}) {
       }
     `,
     variables: {
-      slug: postSlug,
+      slug: pageSlug,
     },
   })
 
-  const post = data?.data.postBy
+  const page = data?.data.pageBy
 
   return {
     props: {
-      post,
+      page,
     },
   }
 }
@@ -73,7 +73,7 @@ export async function getStaticPaths() {
   const data = await apolloClient.query({
     query: gql`
       {
-        posts(first: 10000) {
+        pages(first: 10000) {
           edges {
             node {
               id
@@ -86,13 +86,13 @@ export async function getStaticPaths() {
     `,
   })
 
-  const posts = data?.data.posts.edges.map(({ node }) => node)
+  const pages = data?.data.pages.edges.map(({ node }) => node)
 
   return {
-    paths: posts.map(({ slug }) => {
+    paths: pages.map(({ slug }) => {
       return {
         params: {
-          postSlug: slug,
+          pageSlug: slug,
         },
       }
     }),

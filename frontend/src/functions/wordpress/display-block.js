@@ -25,8 +25,9 @@ export default function displayBlock(block, index) {
       return <ProductFeatures {...acf} key={index} />
 
 
-    default: 
-      return <pre key={index}>{JSON.stringify(block, null, 2)}</pre>
+    default:
+      const FreeformUnhandled = dynamic(() => import("@/components/blocks/Freeform"));
+      return <FreeformUnhandled content={`<pre>UNHANDLED BLOCK<br><br>${JSON.stringify(block, null, 2)}</pre>`} key={index} />
   }
 }
 
