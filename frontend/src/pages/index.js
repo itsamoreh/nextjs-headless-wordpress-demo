@@ -13,7 +13,7 @@ export default function Home({ page, posts }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="container pt-28 mx-auto">
+      <main className="container my-16">
         <div className="max-w-lg mx-auto mb-16 text-center">
           <h1 className="mb-4 text-6xl font-extrabold">{title}</h1>
           <p className="text-gray-400">{description}</p>

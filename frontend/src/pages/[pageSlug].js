@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { gql } from '@apollo/client'
 import { getApolloClient } from '@/lib/apollo/apollo-client'
 import { ALL_BLOCKS } from '@/lib/wordpress/partials/blocks'
+import { ALL_PAGE_SETTINGS } from '@/lib/wordpress/partials/page-settings'
 import { ALL_SEO } from '@/lib/wordpress/partials/seo'
 import Blocks from '@/components/blocks/Blocks'
 
@@ -11,14 +12,16 @@ export default function page({ page }) {
     <>
       <Head seo={page.seo} link={page.link} />
 
-      <main className="py-28">
-        <h1 className="max-w-4xl mx-auto mb-16 text-center text-6xl font-extrabold">
-          {page.title}
-        </h1>
+      <main>
+        {!page?.pageSettings?.hidepagetitle && (
+          <h1 className="container max-w-4xl mx-auto my-16 text-center text-6xl font-extrabold break-words">
+            {post.title}
+          </h1>
+        )}
 
         <Blocks blocks={page.blocks} />
 
-        <div className="container">
+        <div className="container pb-16">
           <div className="mx-auto prose prose-indigo">
             <hr />
             <Link href="/">
@@ -46,6 +49,9 @@ export async function getStaticProps({ params = {} } = {}) {
           link
           seo {
             ${ALL_SEO}
+          }
+          pageSettings {
+            ${ALL_PAGE_SETTINGS}
           }
           blocks {
             ${ALL_BLOCKS}
