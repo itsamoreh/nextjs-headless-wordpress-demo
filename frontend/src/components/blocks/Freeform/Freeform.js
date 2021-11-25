@@ -10,7 +10,7 @@ export default function Freeform({ content }) {
     <div
       // tailwindcss-typography (prose) can be customized using the low-level customization API
       // @see https://github.com/tailwindlabs/tailwindcss-typography#customization
-      className="mx-auto mb-8 prose prose-indigo"
+      className="container mb-8 prose prose-indigo"
       dangerouslySetInnerHTML={{ __html: content }}
     />
   )
