@@ -1,24 +1,16 @@
-import Head from 'next/head'
 import Link from 'next/link'
 import { gql } from '@apollo/client'
 import { getApolloClient } from '@/lib/apollo/apollo-client'
-import Navigation from '@/components/layout/Navigation'
+import Layout from '@/components/layout/Layout'
 
 export default function Home({ generalSettings, menu, posts }) {
   return (
-    <>
-      <Head>
-        <title>{generalSettings.title}</title>
-        <meta name="description" content={generalSettings.description} />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
+    <Layout
+      generalSettings={generalSettings}
+      link={'/'}
+      menuItems={menu?.nodes[0].menuItems.nodes}
+    >
       <main className="container mb-16">
-        <Navigation
-          menuItems={menu?.nodes[0].menuItems.nodes}
-          generalSettings={generalSettings}
-        />
-
         <ul>
           {posts &&
             posts.length > 0 &&
@@ -64,7 +56,7 @@ export default function Home({ generalSettings, menu, posts }) {
             ))}
         </ul>
       </main>
-    </>
+    </Layout>
   )
 }
 
