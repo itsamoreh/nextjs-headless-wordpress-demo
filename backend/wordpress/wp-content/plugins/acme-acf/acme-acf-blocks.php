@@ -28,6 +28,23 @@ function acme_acf_init_block_types() {
 			)
 		);
 
+		// Register a Hero block.
+		acf_register_block_type(
+			array(
+				'name'            => 'acme-hero',
+				'title'           => __( 'Hero' ),
+				'description'     => __( 'Full width CTA block designed for the top of the page.' ),
+				'icon'            => 'align-wide',
+				'keywords'        => array( 'hero', 'cta' ),
+				'render_template' => plugin_dir_path( __FILE__ ) . '/template-parts/blocks/hero.php',
+				'mode'            => 'edit',
+				'supports'        => array(
+					'align' => false,
+					'mode'  => false,
+				),
+			)
+		);
+
 		// Register a Product Features block.
 		acf_register_block_type(
 			array(

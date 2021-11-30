@@ -22,6 +22,29 @@ export const ALL_BLOCKS = `
       }
     }
   }
+  ... on AcfAcmeHeroBlock {
+    name
+    acf {
+      body
+      headingAccent
+      headingMain
+      image {
+        altText
+        srcSet
+        sourceUrl
+      }
+      primaryCta {
+        target
+        title
+        url
+      }
+      secondaryCta {
+        target
+        title
+        url
+      }
+    }
+  }
   ... on AcfAcmeProductFeaturesBlock {
     name
     acf {

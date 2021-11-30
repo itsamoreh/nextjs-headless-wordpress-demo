@@ -14,6 +14,7 @@ function bring_your_own_blocks_allowed_block_types( $allowed_blocks ) {
 	return array(
 		'core/freeform',
 		'acf/acme-call-to-action',
+		'acf/acme-hero',
 		'acf/acme-product-features',
 	);
 }
