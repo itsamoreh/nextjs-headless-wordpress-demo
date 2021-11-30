@@ -38,11 +38,3 @@ function bring_your_own_blocks_enable_editor_styles() {
 	add_editor_style( 'style-editor.css' );
 }
 add_action( 'after_setup_theme', 'bring_your_own_blocks_enable_editor_styles' );
-
-/**
- * Disable the customizer preview.
- */
-function bring_your_own_blocks_disable_customizer_preview() {
-	die( 'The customizer is disabled. Please save and preview your site on the frontend.' );
-}
-add_action( 'customize_preview_init', bring_your_own_blocks_disable_customizer_preview, 1 );

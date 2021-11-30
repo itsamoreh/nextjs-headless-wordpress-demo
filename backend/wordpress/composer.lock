@@ -185,16 +185,16 @@
         },
         {
             "name": "itsamoreh/bring-your-own-blocks",
-            "version": "v0.1.1",
+            "version": "v0.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/itsamoreh/bring-your-own-blocks.git",
-                "reference": "9770a771291d10f3a844ad19c5346b912ad46279"
+                "reference": "a1d0685c29bece7b388f95c434e2f14ea51adaf6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/itsamoreh/bring-your-own-blocks/zipball/9770a771291d10f3a844ad19c5346b912ad46279",
-                "reference": "9770a771291d10f3a844ad19c5346b912ad46279",
+                "url": "https://api.github.com/repos/itsamoreh/bring-your-own-blocks/zipball/a1d0685c29bece7b388f95c434e2f14ea51adaf6",
+                "reference": "a1d0685c29bece7b388f95c434e2f14ea51adaf6",
                 "shasum": ""
             },
             "require": {
@@ -206,10 +206,10 @@
             ],
             "description": "A simple WordPress theme for sites where editors don't need control of the design. BYO... Blocks.",
             "support": {
-                "source": "https://github.com/itsamoreh/bring-your-own-blocks/tree/v0.1.1",
+                "source": "https://github.com/itsamoreh/bring-your-own-blocks/tree/v0.1.2",
                 "issues": "https://github.com/itsamoreh/bring-your-own-blocks/issues"
             },
-            "time": "2021-11-16T05:53:16+00:00"
+            "time": "2021-11-30T04:54:02+00:00"
         },
         {
             "name": "opis/json-schema",
@@ -321,15 +321,15 @@
         },
         {
             "name": "sybrew/the-seo-framework",
-            "version": "4.2.0",
+            "version": "4.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sybrew/the-seo-framework.git",
-                "reference": "0e8748fce5e329791e1735f41bf07df27e2d85a5"
+                "reference": "f1e73182c2be8e2eb250f9accaf1103969ae9965"
             },
             "require": {
                 "composer/installers": "^1.0",
-                "php": "^5.6 || ^7.0 || ^8.0"
+                "php": "~7.2 || ^8.0 || ^8.1"
             },
             "require-dev": {
                 "dealerdirect/phpcodesniffer-composer-installer": "0.5.0",
@@ -375,20 +375,20 @@
                 "forum": "https://wordpress.org/support/plugin/autodescription/",
                 "wiki": "https://github.com/sybrew/the-seo-framework/wiki"
             },
-            "time": "2021-11-15T21:20:22+00:00"
+            "time": "2021-11-29T12:27:56+00:00"
         },
         {
             "name": "symfony/css-selector",
-            "version": "v5.3.4",
+            "version": "v5.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
-                "reference": "7fb120adc7f600a59027775b224c13a33530dd90"
+                "reference": "44b933f98bb4b5220d10bed9ce5662f8c2d13dcc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/css-selector/zipball/7fb120adc7f600a59027775b224c13a33530dd90",
-                "reference": "7fb120adc7f600a59027775b224c13a33530dd90",
+                "url": "https://api.github.com/repos/symfony/css-selector/zipball/44b933f98bb4b5220d10bed9ce5662f8c2d13dcc",
+                "reference": "44b933f98bb4b5220d10bed9ce5662f8c2d13dcc",
                 "shasum": ""
             },
             "require": {
@@ -425,7 +425,7 @@
             "description": "Converts CSS selectors to XPath expressions",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/css-selector/tree/v5.3.4"
+                "source": "https://github.com/symfony/css-selector/tree/v5.4.0"
             },
             "funding": [
                 {
@@ -441,7 +441,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-07-21T12:38:00+00:00"
+            "time": "2021-09-09T08:06:01+00:00"
         },
         {
             "name": "symfony/polyfill-php80",
