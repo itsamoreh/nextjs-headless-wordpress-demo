@@ -259,9 +259,12 @@ export default function Hero({
 }
 
 Hero.propTypes = {
-  heading: PropTypes.string,
-  description: PropTypes.string,
-  features: PropTypes.array,
+  headingMain: PropTypes.string,
+  headingAccent: PropTypes.string,
+  body: PropTypes.string,
+  primaryCta: PropTypes.object,
+  secondaryCta: PropTypes.object,
+  image: PropTypes.object,
 }
 ```
 
