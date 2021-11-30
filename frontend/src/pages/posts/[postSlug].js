@@ -1,4 +1,4 @@
-import Head from '@/components/other/Head'
+import Head from '@/components/layout/Head'
 import Link from 'next/link'
 import { gql } from '@apollo/client'
 import { getApolloClient } from '@/lib/apollo/apollo-client'

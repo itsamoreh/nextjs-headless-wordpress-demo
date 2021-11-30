@@ -2,22 +2,22 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { gql } from '@apollo/client'
 import { getApolloClient } from '@/lib/apollo/apollo-client'
+import Navigation from '@/components/layout/Navigation'
 
-export default function Home({ page, posts }) {
-  const { title, description } = page
+export default function Home({ generalSettings, menu, posts }) {
   return (
     <>
       <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
+        <title>{generalSettings.title}</title>
+        <meta name="description" content={generalSettings.description} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="container my-16">
-        <div className="max-w-lg mx-auto mb-16 text-center">
-          <h1 className="mb-4 text-6xl font-extrabold">{title}</h1>
-          <p className="text-gray-400">{description}</p>
-        </div>
+      <main className="container mb-16">
+        <Navigation
+          menuItems={menu?.nodes[0].menuItems.nodes}
+          generalSettings={generalSettings}
+        />
 
         <ul>
           {posts &&
@@ -78,6 +78,17 @@ export async function getStaticProps() {
           title
           description
         }
+        menus(where: { location: MENU_1 }) {
+          nodes {
+            menuItems {
+              nodes {
+                label
+                path
+                target
+              }
+            }
+          }
+        }
         posts(first: 10000) {
           edges {
             node {
@@ -97,6 +108,14 @@ export async function getStaticProps() {
     `,
   })
 
+  const generalSettings = {
+    ...data?.data.generalSettings,
+  }
+
+  const menu = {
+    ...data?.data.menus,
+  }
+
   const posts = data?.data.posts.edges
     .map(({ node }) => node)
     .map((post) => {
@@ -106,13 +125,10 @@ export async function getStaticProps() {
       }
     })
 
-  const page = {
-    ...data?.data.generalSettings,
-  }
-
   return {
     props: {
-      page,
+      generalSettings,
+      menu,
       posts,
     },
   }
