@@ -321,11 +321,11 @@
         },
         {
             "name": "sybrew/the-seo-framework",
-            "version": "4.2.1",
+            "version": "4.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sybrew/the-seo-framework.git",
-                "reference": "f1e73182c2be8e2eb250f9accaf1103969ae9965"
+                "reference": "b8ff9f8db4b1a0455128adcd521d2354636b4651"
             },
             "require": {
                 "composer/installers": "^1.0",
@@ -375,7 +375,7 @@
                 "forum": "https://wordpress.org/support/plugin/autodescription/",
                 "wiki": "https://github.com/sybrew/the-seo-framework/wiki"
             },
-            "time": "2021-11-29T12:27:56+00:00"
+            "time": "2021-12-06T21:52:42+00:00"
         },
         {
             "name": "symfony/css-selector",
@@ -673,15 +673,15 @@
         },
         {
             "name": "wpackagist-plugin/advanced-custom-fields",
-            "version": "5.11.3",
+            "version": "5.11.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/advanced-custom-fields/",
-                "reference": "tags/5.11.3"
+                "reference": "tags/5.11.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/advanced-custom-fields.5.11.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/advanced-custom-fields.5.11.4.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -691,15 +691,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-graphql",
-            "version": "1.6.7",
+            "version": "1.6.9",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-graphql/",
-                "reference": "tags/1.6.7"
+                "reference": "tags/1.6.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-graphql.1.6.7.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-graphql.1.6.9.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"

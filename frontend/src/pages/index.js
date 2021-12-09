@@ -8,7 +8,7 @@ export default function Home({ generalSettings, menu, posts }) {
     <Layout
       generalSettings={generalSettings}
       link={'/'}
-      menuItems={menu?.nodes[0].menuItems.nodes}
+      menuItems={menu?.nodes[0]?.menuItems?.nodes}
     >
       <main className="container mb-16">
         <ul>
