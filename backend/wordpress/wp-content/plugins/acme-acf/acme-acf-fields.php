@@ -8,7 +8,7 @@
 /**
  * Add ACF fields.
  */
-if ( function_exists( 'acf_add_local_field_group' ) ) {
+function acme_acf_add_local_field_groups() {
 	acf_add_local_field_group(
 		array(
 			'key'                                   => 'group_6193566736e20',
@@ -591,3 +591,5 @@ if ( function_exists( 'acf_add_local_field_group' ) ) {
 		)
 	);
 }
+
+add_action( 'acf/init', 'acme_acf_add_local_field_groups' );
