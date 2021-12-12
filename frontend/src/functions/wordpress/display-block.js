@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
  * @see https://nextjs.org/docs/advanced-features/dynamic-import
  */
 export default function displayBlock(block, index) {
-  const { acf, attributes, name } = block
+  const { acfAttributes, attributes, name } = block
 
   // prettier-ignore
   switch (name) {
@@ -18,15 +18,15 @@ export default function displayBlock(block, index) {
 
     case 'acf/acme-call-to-action':
       const CallToAction = dynamic(() => import("@/components/blocks/CallToAction"));
-      return <CallToAction {...acf} key={index} />
+      return <CallToAction {...acfAttributes} key={index} />
 
     case 'acf/acme-hero':
       const Hero = dynamic(() => import("@/components/blocks/Hero"));
-      return <Hero {...acf} key={index} />
+      return <Hero {...acfAttributes} key={index} />
 
     case 'acf/acme-product-features':
       const ProductFeatures = dynamic(() => import("@/components/blocks/ProductFeatures"));
-      return <ProductFeatures {...acf} key={index} />
+      return <ProductFeatures {...acfAttributes} key={index} />
 
     default:
       const FreeformUnhandled = dynamic(() => import("@/components/blocks/Freeform"));

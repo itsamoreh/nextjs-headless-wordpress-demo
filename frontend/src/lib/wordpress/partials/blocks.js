@@ -7,7 +7,7 @@ export const ALL_BLOCKS = `
   }
   ... on AcfAcmeCallToActionBlock {
     name
-    acf {
+    acfAttributes {
       headingCall
       headingQuestion
       primaryCta {
@@ -24,7 +24,7 @@ export const ALL_BLOCKS = `
   }
   ... on AcfAcmeHeroBlock {
     name
-    acf {
+    acfAttributes {
       body
       headingAccent
       headingMain
@@ -47,7 +47,7 @@ export const ALL_BLOCKS = `
   }
   ... on AcfAcmeProductFeaturesBlock {
     name
-    acf {
+    acfAttributes {
       description
       features {
         description
